@@ -1,17 +1,7 @@
-// document.getElementById("chatbot_toggle").onclick = function () {
-//     // if (document.getElementById("chatbot").classList.contains("collapsed")) {
-//     //     document.getElementById("chatbot").classList.remove("collapsed");
-//     // }
-//     // else {
-//     //     document.getElementById("chatbot").classList.add("collapsed");
-//     // }
-//     document.getElementById("chatbot").classList.toggle("collapsed");
-// }
 function chatbotToggle() {
     document.getElementById("chatbot").classList.toggle("collapsed");
     $('#chatbot_toggle').toggle()
 }
-
 
 function getTime() {
     let today = new Date();
