@@ -8,19 +8,24 @@
     <title>chatbox</title>
     <link rel="stylesheet" href="./chat.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="./chat.js"></script>
-    <script src="./responses.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
+    <!-- <button id="chatbot_toggle">ICON</button> -->
+    <img src="./lot-logo.png" id="chatbot_toggle" onclick="chatbotToggle()" alt="Open Chatbot">
     <div>
         <h3>Chatbot</h3>
         <div>
             <div id="chatbot" class="main-card collapsed">
-                <button id="chatbot_toggle">ICON</button>
-                <div class="main-title">
-                    <span>Chatbot</span>
+                <div class="main-title" onclick="chatbotToggle()">
+                    <div>
+                        <img src="./lot-logo.png" alt="">
+                        <div>
+                            <span style="font-weight: 400; font-size: 1.25rem;">Chatbot name</span>
+                            <span>Chatbot description</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="chat-area" id="message-box">
                     <h5 id="chat-timestamp"></h5>
@@ -30,15 +35,16 @@
                     <input class="input-message" name="message" type="text" id="message"
                         placeholder="Press 'Enter' to send a message" />
                     <p></p>
-                    <div class="chat-bar-icons">
-                        <i id="chat-icon" style="color : black;" class="fa fa-fw fa-send" ></i>
-                    </div>
+                    <img src="./PaperPlaneRight.svg" id="chat-icon" alt="Send message">
+                    <!-- <div class="chat-bar-icons">
+                        <i id="chat-icon" style="color : black;" class="fa fa-fw fa-send"></i>
+                    </div> -->
                 </div>
             </div>
         </div>
 
 </body>
-
-
+<script src="./chat.js"></script>
+<script src="./responses.js"></script>
 
 </html>
