@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.static("./static"))
 
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
     console.log("listening at 3000");
 })
 
