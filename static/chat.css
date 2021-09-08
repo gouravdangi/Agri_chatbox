@@ -25,12 +25,14 @@ body {
       }
   
       .collapsed {
-        width: 48px !important;
-        height: 48px !important;
-        border-radius: 24px !important;
-        margin: 16px!important;
+        /* transition: all 1s; */
+        clip-path: circle(0px at 100% 100%) !important;
+        width: 0 !important;
+        height: 0 !important;
+        /* border-radius: 0 !important; */
+        /* margin: 16px!important; */
       }
-  
+      
       .main-card {
         background: white;
         color: white;
@@ -45,22 +47,19 @@ body {
         bottom: 0;
         position: absolute;
         transition: all 0.5s;
+        transition: all 1s ease;
         box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
   #chatbot_toggle {
     position: absolute;
-    right: 0;
+    cursor: pointer;
+    right: 1rem;
+    bottom: 1rem;
+    height: 4rem;
+    width: 4rem;
     border: none;
-    height: 48px;
-    width: 54px;
-    background: #158a0d  ;
-    padding: 14px;
     color:white;
-    z-index: 10;
-  }
-  #chatbot_toggle:hover {
-    background: #5eee50;
-    color: #000;
+    z-index: 1;
   }
   .line {
     height: 1px;
@@ -68,18 +67,31 @@ body {
     width: 100%;
     opacity: 0.2;
   }
+
   .main-title {
-    background-color: #158a0d;
-    font-size: large;
-    font-weight: bold;
+    background-color: #E3F2ED;
     display: flex;
-    height: 48px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 96px;
+    border-radius: 0 0 50% 50%;
+    color: #000;
   }
   .main-title>div{
-    height:48px;
-    width:48px;
-    display:flex;
-    margin-left:8px;
+    display: flex;
+    align-items: center;
+    height: 80px;
+  }
+  .main-title>div>div{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-title  img{
+    width: 64px;
+    height:64px;
+    margin: 0.5rem;
   }
   .main-title svg {
     height: 24px;
@@ -97,16 +109,21 @@ body {
     flex-direction: column;
   }
   .input-message {
-    padding: 8px 48px 8px 16px;
-    flex-grow: 1;
-    border: none;
+        padding: 4px 8px;
+        width: 80%;
+        height: 32px;
+        border: none;
+        border-radius: 9px;
   }
   .input-message:focus {
     outline: none;
   }
   .input-div {
-    height: 48px;
+    height: 64px;
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #E3F2ED;
   }
   
   .input-send {
@@ -206,18 +223,22 @@ body {
   
   .botText span{
   line-height: 0.5cm;
+  position: relative;
   display: inline-block;
-  background-color: #e0e0e0;
-  padding: 7px;
+  background-color: #E3F2ED;
+  padding: 0.625rem;
   border-radius: 8px;
   border-bottom-left-radius: 2px;
   max-width: 80%;
   margin-left: 0px;
   animation: floatup .5s forwards
   }
-  
-  
-  
+  .waiting span{
+    font-size: large;
+    font-weight: bold;
+    padding: 0.625rem 1.5rem;
+  }
+
   .userText{
   color: white;
   font-family:  Helvetica;
@@ -230,10 +251,11 @@ body {
   .userText span{
   line-height: 0.5cm;
   display: inline-block;
-  background-color: #5ca6fa;
-  padding: 7px;
+  background-color: #00B900;
+  padding: 0.625rem;
+  color: white;
   border-radius: 8px;
-  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
   max-width: 80%;
   margin-right: 10px;
   animation: floatup .5s forwards;
